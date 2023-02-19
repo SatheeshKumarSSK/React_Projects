@@ -1,6 +1,5 @@
 import React from "react";
-import Header from "../Layout/Header"
-import Footer from "../Layout/Footer"
+import Header from "../../Layout/Header"
 import AddRandomContact from "./AddRandomContact";
 import RemoveAllContact from "./RemoveAllContact";
 import AddContact from "./AddContact";
@@ -201,7 +200,6 @@ class ContactIndex extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
         )
     }
