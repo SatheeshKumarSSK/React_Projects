@@ -5,8 +5,8 @@ class AddContact extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            errorMessage: undefined,
-            successMessage: undefined
+            errorMessage: "",
+            successMessage: ""
         }
     }
 
@@ -17,7 +17,7 @@ class AddContact extends React.Component {
         const mail = e.target.elements.contactEmail.value.trim();
         const phoneNo = e.target.elements.contactPhone.value.trim();
 
-        let response = undefined;
+        let response = "";
 
         if (this.props.isUpdating) {
             response = this.props.updateContact({ id: id, name: name, email: mail, phone: phoneNo });
@@ -27,10 +27,10 @@ class AddContact extends React.Component {
         }
 
         if (response.status === "success") {
-            this.setState({ errorMessage: undefined, successMessage: response.msg });
+            this.setState({ errorMessage: "", successMessage: response.msg });
             document.querySelector(".contact-form").reset();
         } else {
-            this.setState({ errorMessage: response.msg, successMessage: undefined });
+            this.setState({ errorMessage: response.msg, successMessage: "" });
         }
     }
 
@@ -38,12 +38,10 @@ class AddContact extends React.Component {
         this.props.cancelContact();
         this.setState(() => {
             return {
-                errorMessage: undefined,
-                successMessage: undefined
+                errorMessage: "",
+                successMessage: ""
             }
-
         })
-
     }
 
     render() {
@@ -111,7 +109,6 @@ class AddContact extends React.Component {
             </div>
         )
     }
-
 }
 
 export default AddContact;

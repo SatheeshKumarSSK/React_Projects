@@ -6,7 +6,7 @@ import Header from './Header';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <div style={{color:"white"}}>
+  <div style={{ color: "white" }}>
     <Header />
     <Counter />
   </div>

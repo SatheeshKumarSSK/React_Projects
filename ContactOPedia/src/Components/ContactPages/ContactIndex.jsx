@@ -35,7 +35,7 @@ class ContactIndex extends React.Component {
                     isFavorite: false
                 }
             ],
-            selectedContact: undefined,
+            selectedContact: "",
             isUpdating: false
         }
     }
@@ -87,7 +87,7 @@ class ContactIndex extends React.Component {
                     }
                     return obj;
                 }),
-                selectedContact: undefined,
+                selectedContact: "",
                 isUpdating: false
             };
         });
@@ -150,7 +150,7 @@ class ContactIndex extends React.Component {
     handleCancelContact = () => {
         this.setState(() => {
             return {
-                selectedContact: undefined,
+                selectedContact: "",
                 isUpdating: false
             }
         })
